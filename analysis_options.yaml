@@ -1,0 +1,98 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    avoid_web_libraries_in_flutter: ignore
+  plugins:
+    - dart_code_metrics
+
+art_code_metrics:
+  metrics:
+    maximum-nesting-level: 5
+    number-of-parameters: 5
+    cyclomatic-complexity: 20
+    number-of-methods: 10
+
+  rules:
+    - avoid-dynamic
+    - avoid-passing-async-when-sync-expected
+    - avoid-redundant-async
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unrelated-type-assertions
+    - avoid-unused-parameters
+    - avoid-nested-conditional-expressions
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - prefer-trailing-comma
+    - prefer-conditional-expressions
+    - no-equal-then-else
+    - prefer-moving-to-variable
+    - prefer-match-file-name
+    - always_declare_return_types
+    - empty_catches
+    - file_names
+    - flutter_style_todos
+    - omit_local_variable_types
+    - prefer_final_locals
+    - prefer_relative_imports
+    - prefer_single_quotes
+    - sort_child_properties_last
+    - sort_constructors_first
+    - type_annotate_public_apis
+    - unawaited_futures
+    - always_put_control_body_on_new_line
+    - always_put_required_named_parameters_first
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_catches_without_on_clauses
+    - avoid_catching_errors
+    - avoid_classes_with_only_static_members
+    - avoid_dynamic_calls
+    - avoid_double_and_int_checks
+    - avoid_field_initializers_in_const_classes
+    - avoid_implementing_value_types
+    - avoid_js_rounded_ints
+    - avoid_multiple_declarations_per_line
+    - avoid_positional_boolean_parameters
+    - avoid_private_typedef_functions
+    - avoid_returning_null
+    - avoid_returning_this
+    - avoid_setters_without_getters
+    - avoid_slow_async_io
+    - avoid_type_to_string
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - cancel_subscriptions
+    - cascade_invocations
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
+    - no_default_cases
+    - null_check_on_nullable_type_parameter
+    - one_member_abstracts
+    - only_throw_errors
+    - package_api_docs
+    - cast_nullable_to_non_nullable
+    - close_sinks
+    - comment_references
+    - deprecated_consistency
+    - directives_ordering
+    - join_return_with_assignment
+    - parameter_assignments
+    - prefer_asserts_in_initializer_lists
+    - prefer_constructors_over_static_methods
+    - prefer_final_in_for_each
+    - prefer_foreach
+    - prefer_int_literals
+    - prefer_interpolation_to_compose_strings
+    - require_trailing_commas
+    - sort_pub_dependencies
+    - sort_unnamed_constructors_first
+    - test_types_in_equals
+    - throw_in_finally
+    - tighten_type_of_initializing_formals
+    - unnecessary_await_in_return
+    - unnecessary_lambdas
+    - unnecessary_null_aware_assignments
+    - unnecessary_null_checks
+    - unnecessary_nullable_for_final_variable_declarations
