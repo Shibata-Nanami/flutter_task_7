@@ -4,9 +4,9 @@ import 'package:layer_architecture_template/infrastructure/data_source/isar/todo
 import 'package:layer_architecture_template/infrastructure/model/sample/sample_model.dart';
 import 'package:layer_architecture_template/infrastructure/repository/sample/sample_repository2.dart';
 
-final sampleService = Provider.autoDispose(
+final sampleService2 = Provider.autoDispose(
   (ref) => SampleService2(
-    sampleRepository: ref.read(sampleRepository),
+    sampleRepository: ref.read(sampleRepository2),
   ),
 );
 

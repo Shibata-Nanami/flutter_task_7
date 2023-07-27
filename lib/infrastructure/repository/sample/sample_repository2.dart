@@ -5,7 +5,7 @@ import 'package:layer_architecture_template/infrastructure/data_source/isar/todo
 import '../../data_source/sample/sample_remote_data_source.dart';
 import '../../model/sample/sample_model.dart';
 
-final sampleRepository = Provider(
+final sampleRepository2 = Provider(
   (ref) => SampleRepository2(
     sampleDataSource: SampleDataSource(),
     todoCollectionDataSource: TodoCollectionDataSource(),
