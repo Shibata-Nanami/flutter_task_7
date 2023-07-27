@@ -7,6 +7,7 @@ import '../pages/sample/isar_sample_page.dart';
 import '../pages/sample/sample_home_page.dart';
 import '../pages/sample_detail/sample_detail_page.dart';
 import '../pages/splash/splash_page.dart';
+import '../pages/todo/todolist_page.dart';
 import 'slide_transitions_builder.dart';
 
 const denyShowBNBList = [
@@ -77,6 +78,14 @@ final router = GoRouter(
           ),
         ),
       ],
+    ),
+    GoRoute(
+      name: TodoListPage.routeName,
+      path: TodoListPage.routePath,
+      pageBuilder: (context, state) => NoTransitionPage(
+        key: state.pageKey,
+        child: const TodoListPage(),
+      ),
     ),
   ],
 );
