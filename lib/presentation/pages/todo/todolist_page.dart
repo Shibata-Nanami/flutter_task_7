@@ -7,8 +7,8 @@ import '../../../domain/todo/todo_notifier.dart';
 class TodoListPage extends ConsumerWidget {
   const TodoListPage({super.key});
 
-  static const String routeName = '/todoListPage';
-  static const String routePath = '/todoListPage';
+  static const String routeName = 'todo_List_Page';
+  static const String routePath = '/todo_List_Page';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
