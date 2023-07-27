@@ -19,7 +19,7 @@ class BaseScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 55, 55, 55),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: isShowAppBar
           ? AppBar(
               automaticallyImplyLeading: false,
@@ -30,7 +30,7 @@ class BaseScaffold extends StatelessWidget {
                 ),
               ),
               elevation: 0,
-              backgroundColor: const Color.fromARGB(255, 55, 55, 55),
+              backgroundColor: const Color.fromARGB(255, 183, 183, 183),
             )
           : null,
       body: child,
