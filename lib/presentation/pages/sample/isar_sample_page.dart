@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layer_architecture_template/presentation/component/base_scaffold.dart';
 
-import '../../../domain/sample/sample_notifier.dart';
 import '../../../infrastructure/data_source/isar/todo/todo_collection.dart';
+import '../../../infrastructure/repository/sample/sample_notifier2.dart';
 
 class IsarSamplePage extends ConsumerWidget {
   const IsarSamplePage({super.key});
@@ -13,7 +13,8 @@ class IsarSamplePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final notifier = ref.watch(sampleNotifierProvider.notifier);
+    final notifier = ref.watch(sampleNotifierProvider2.notifier);
+    final state = ref.watch(sampleNotifierProvider2);
     return BaseScaffold(
       isShowAppBar: true,
       appBarTitle: 'Isar Sample Page',
