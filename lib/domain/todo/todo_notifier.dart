@@ -8,7 +8,7 @@ final todoNotifierProvider =
     StateNotifierProvider.autoDispose<TodoNotifier, TodoState>((ref) {
   return TodoNotifier(
     todoService: ref.read(todoService),
-  )..init();
+  );
 });
 
 class TodoNotifier extends StateNotifier<TodoState> {
@@ -28,6 +28,7 @@ class TodoNotifier extends StateNotifier<TodoState> {
   }
 
   Future<List<SampleModel>> fetchSampleModelList() async {
+    state = state.copyWith(futureTodoList: const AsyncValue.loading());
     final todoList = await todoService.fetchSampleModelList();
     state = state.copyWith(
       futureTodoList: AsyncValue.data(todoList),
