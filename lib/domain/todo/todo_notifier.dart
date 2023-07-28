@@ -8,7 +8,7 @@ final todoNotifierProvider =
     StateNotifierProvider.autoDispose<TodoNotifier, TodoState>((ref) {
   return TodoNotifier(
     todoService: ref.read(todoService),
-  )..init();
+  );
 });
 
 class TodoNotifier extends StateNotifier<TodoState> {
@@ -19,14 +19,20 @@ class TodoNotifier extends StateNotifier<TodoState> {
   final TodoService todoService;
 
   Future<void> init() async {
-    // 通常のFutureのサンプル
-    final todoList = await fetchSampleModelList();
-    state = state.copyWith(
-      futureTodoList: AsyncValue.data(todoList),
-    );
+    await fetchSampleModelList();
+    // // 通常のFutureのサンプル
+    // final todoList = await fetchSampleModelList();
+    // state = state.copyWith(
+    //   futureTodoList: AsyncValue.data(todoList),
+    // );
   }
 
   Future<List<SampleModel>> fetchSampleModelList() async {
-    return todoService.fetchSampleModelList();
+    state = state.copyWith(futureTodoList: const AsyncValue.loading());
+    final todoList = await todoService.fetchSampleModelList();
+    state = state.copyWith(
+      futureTodoList: AsyncValue.data(todoList),
+    );
+    return todoList;
   }
 }
