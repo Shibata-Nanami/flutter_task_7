@@ -35,24 +35,43 @@ class TodoListPage extends ConsumerWidget {
             ),
             state.futureTodoList.when(
               data: (data) {
-                // ここでfutureTodoListの値が取れる
                 return SliverList(
                   delegate: SliverChildBuilderDelegate(
+                    // ここでfutureTodoListの値が取れる
                     (context, index) {
                       // これで単体データが取れる
                       final todo = data[index];
-                      return const SizedBox();
+                      return Card(
+                        child: ListTile(
+                          title: Text(todo.name),
+                        ),
+                      );
                     },
                     childCount: data.length,
                   ),
                 );
               },
               error: (e, s) {
-                return const Text('error');
+                return const SliverToBoxAdapter(
+                  child: Center(
+                    child: Text('error'),
+                  ),
+                );
               },
               loading: () {
                 // ローディングはここ
-                return const SizedBox();
+                return SliverToBoxAdapter(
+                  child: Center(
+                    child: SizedBox(
+                      width: 300,
+                      height: 20,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10),
+                        child: const LinearProgressIndicator(),
+                      ),
+                    ),
+                  ),
+                );
               },
             ),
           ],
