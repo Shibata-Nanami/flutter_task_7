@@ -33,13 +33,27 @@ class TodoListPage extends ConsumerWidget {
                 child: const Text('Isar Fetch TodoList'),
               ),
             ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (BuildContext context, int index) {
-                  return const SizedBox();
-                },
-                childCount: 10,
-              ),
+            state.futureTodoList.when(
+              data: (data) {
+                // ここでfutureTodoListの値が取れる
+                return SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      // これで単体データが取れる
+                      final todo = data[index];
+                      return const SizedBox();
+                    },
+                    childCount: data.length,
+                  ),
+                );
+              },
+              error: (e, s) {
+                return const Text('error');
+              },
+              loading: () {
+                // ローディングはここ
+                return const SizedBox();
+              },
             ),
           ],
         ),
