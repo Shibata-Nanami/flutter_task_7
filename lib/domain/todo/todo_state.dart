@@ -9,6 +9,6 @@ part 'todo_state.freezed.dart';
 class TodoState with _$TodoState {
   const factory TodoState({
     // こちらの場合、state.futureTodoList.when~が使える
-    @Default(AsyncValue.loading()) AsyncValue<List<SampleModel>> futureTodoList,
+    @Default(AsyncValue.data([])) AsyncValue<List<SampleModel>> futureTodoList,
   }) = _TodoState;
 }

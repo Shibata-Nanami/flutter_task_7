@@ -92,7 +92,7 @@ class __$$_TodoStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TodoState implements _TodoState {
-  const _$_TodoState({this.futureTodoList = const AsyncValue.loading()});
+  const _$_TodoState({this.futureTodoList = const AsyncValue.data([])});
 
 // こちらの場合、state.futureTodoList.when~が使える
   @override
