@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layer_architecture_template/domain/todo/todo_service.dart';
 import 'package:layer_architecture_template/domain/todo/todo_state.dart';
-import '../../infrastructure/model/sample/sample_model.dart';
 
 final todoNotifierProvider =
     StateNotifierProvider.autoDispose<TodoNotifier, TodoState>((ref) {
@@ -26,12 +25,12 @@ class TodoNotifier extends StateNotifier<TodoState> {
     // );
   }
 
-  Future<List<SampleModel>> fetchSampleModelList() async {
+//List型などからvoid型にすると「何も返さない」という意味になるためエラーがなくなる
+  Future<void> fetchSampleModelList() async {
     state = state.copyWith(futureTodoList: const AsyncValue.loading());
     final todoList = await todoService.fetchSampleModelList();
     state = state.copyWith(
       futureTodoList: AsyncValue.data(todoList),
     );
-    return todoList;
   }
 }
