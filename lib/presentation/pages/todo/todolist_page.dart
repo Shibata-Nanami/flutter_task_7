@@ -25,10 +25,8 @@ class TodoListPage extends ConsumerWidget {
             SliverToBoxAdapter(
               child: ElevatedButton(
                 onPressed: () async {
-                  final todoList = await notifier.fetchSampleModelList();
-                  for (final todo in todoList) {
-                    print(todo);
-                  }
+                  //橋渡しするだけの形に変更
+                  await notifier.fetchSampleModelList();
                 },
                 child: const Text('Isar Fetch TodoList'),
               ),
