@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "flutter-task-5",
+    "What alias do you want to use for this project? (e.g. staging) ": "flutter-task-7"
+  },
+  "targets": {},
+  "etags": {}
+}
