@@ -1,7 +1,6 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:layer_architecture_template/domain/todo/todo_service.dart';
 import 'package:layer_architecture_template/domain/todo/todo_state.dart';
-
 import '../../infrastructure/model/sample/sample_model.dart';
 
 final todoNotifierProvider =
